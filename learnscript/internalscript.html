@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            function showVietnamese() {
+                id_div_vi.style.display = 'block';
+                id_div_korea.style.display = 'none';
+                id_div_chinese.style.display = 'none';
+            }
+            function showKorean() {
+                id_div_vi.style.display = 'none';
+                id_div_korea.style.display = 'block';
+                id_div_chinese.style.display = 'none';
+            }
+            function showChinese() {
+                id_div_vi.style.display = 'none';
+                id_div_korea.style.display = 'none';
+                id_div_chinese.style.display = 'block';
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm">
+            <h3>Select language:</h3>
+            <input type="radio" name="language" value="vi" id="rad1"
+            checked
+            onclick="showVietnamese()"
+            > 
+            <label for="rad1">Vietnamese</label><br>
+            <input type="radio" name="language" value="korea" id="rad2"
+            onclick="showKorean()"
+            > 
+            <label for="rad2">한국</label><br>
+            <input type="radio" name="language" value="chinese" id="rad3"
+            onclick="showChinese()"
+            > 
+            <label for="rad3">中国</label>
+            <div id="id_div_vi" style="display: block;">
+                <h4>Xin chào</h4>
+            </div>
+            <div id="id_div_korea" style="display: none;">
+                <h4>
+                    안녕하세요
+                </h4>
+            </div>
+            <div id="id_div_chinese" style="display: none;">
+                <h4>
+                    你好， 身体好吗？
+                </h4>
+            </div>
+        </form>
+    </body>
+</html>

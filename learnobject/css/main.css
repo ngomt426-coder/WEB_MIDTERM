@@ -1,0 +1,10 @@
+table,td,tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+
+tbody tr:hover{
+    background-color: #f3f555;
+}

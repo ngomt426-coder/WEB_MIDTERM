@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+    </head>
+    <body>
+        <form name="myform">
+            <p>URI:</p>
+            <input type="text" name="uri" id="uri" maxlength="200" size="100"
+                  value="https://www.example.com:8080/search?id=id123&name=John">
+            <button>Get Infor</button>
+            <p>Protocol: <span id="protocol"></span></p>
+            <p>Host: <span id="host"></span></p>
+            <p>Port: <span id="port"></span></p>
+            <p>Id: <span id="query-id"></span></p>
+            <p>Name: <span id="query-name"></span></p>
+            <p id="timer"></p>
+        </form>
+        <script>
+            function make_timer()
+            {
+                var date=new Date();
+                document.getElementById("timer").innerHTML = date.toLocaleString();
+            }
+            setInterval(make_timer,1000);
+        </script>
+    </body>
+</html>

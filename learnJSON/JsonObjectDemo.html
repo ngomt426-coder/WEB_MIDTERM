@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            var customer={
+                "CustomerID":"c1",
+                "FirstName":"Tom",
+                "LastName":"Tran",
+                "Email":"tom@gmail.com",
+                "Telephone":"09812234534",
+                FullName:function(){
+                    return this.FirstName+" "+this.LastName
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>Customer ID:</td>
+                <td id="td_customerID"></td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td id="td_firstname"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td id="td_lastname"></td>
+            </tr>
+            <tr>
+                <td>Full Name:</td>
+                <td id="td_fullname"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td id="td_email"></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td id="td_phone"></td>
+            </tr>
+        </table>
+        <script>
+            td_customerID=document.getElementById("td_customerID")
+            td_firstname=document.getElementById("td_firstname")
+            td_lastname=document.getElementById("td_lastname")
+            td_fullname=document.getElementById("td_fullname")
+            td_email=document.getElementById("td_email")
+            td_phone=document.getElementById("td_phone")
+            td_customerID.innerHTML=customer.CustomerID
+            td_firstname.innerHTML=customer["FirstName"]
+            td_lastname.innerHTML=customer.LastName
+            td_email.innerHTML=customer.Email
+            td_phone.innerHTML=customer.Telephone
+            td_fullname.innerHTML=customer.FullName()
+        </script>
+    </body>
+</html>

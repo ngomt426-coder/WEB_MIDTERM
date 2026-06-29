@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            customers=[
+                {"Id":"c1",
+                  "Name":"teo",
+                  "Age":30,
+                  "Email":"teo@gmail.com"  
+                },
+                {"Id":"c2",
+                  "Name":"ty",
+                  "Age":29,
+                  "Email":"ty@gmail.com"  
+                },
+                {"Id":"c3",
+                  "Name":"bin",
+                  "Age":35,
+                  "Email":"bin@gmail.com"  
+                },
+                {"Id":"c4",
+                  "Name":"bo",
+                  "Age":32,
+                  "Email":"bo@gmail.com"  
+                },
+                {"Id":"c5",
+                  "Name":"tom",
+                  "Age":27,
+                  "Email":"tom@gmail.com"  
+                },
+            ]
+        </script>
+    </head>
+    <body onload="load_customers()">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="customer_body">
+
+            </tbody>
+        </table>
+        <script>
+            function load_customers()
+            {
+                customer_body=document.getElementById("customer_body")
+                for(i=0;i<customers.length;i++)
+                {
+                    customer=customers[i]
+                    tr=document.createElement("tr")
+                    td_id=document.createElement("td")
+                    td_name=document.createElement("td")
+                    td_age=document.createElement("td")
+                    td_email=document.createElement("td")
+                    td_id.innerHTML=customer["Id"]
+                    td_name.innerHTML=customer.Name
+                    td_age.innerHTML=customer.Age
+                    td_email.innerHTML=customer.Email
+                    tr.appendChild(td_id)
+                    tr.appendChild(td_name)
+                    tr.appendChild(td_age)
+                    tr.appendChild(td_email)
+                    customer_body.appendChild(tr)
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            function solveEquation() 
+            {
+                //alert("Solving equation...");
+                var a=eval(myform.input_a.value);
+                var b=eval(myform.input_b.value);
+                //alert("a = " + a + ", b = " + b);
+                var result=""
+                if(a==0)
+                {
+                    if(b==0){
+                        result = "Infinite solutions";
+                    }
+                    else{
+                        result = "No solution";
+                    }
+                }
+                else{
+                    result = -b/a;
+                }
+                // Display the result in the first input field
+                myform.input_result.value = result;    
+                //td_result.innerText = result;          
+                td_result.innerHTML = "<font color='blue'>" + result + "</font>";
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <h1>First Degree Equation</h1>
+            <table>
+                <tr>
+                    <td>a:</td>
+                    <td><input type="text" id="input_a" name="input_a"></td>
+                </tr>
+                <tr>
+                    <td>b:</td>
+                    <td><input type="text" id="input_b" name="input_b"></td>
+                </tr>
+                <tr>
+                    <td>Result way 1:</td>
+                    <td><input type="text" id="input_result" name="input_result" readonly></td>
+                </tr>
+                <tr>
+                    <td>Result way 2:</td>
+                    <td id="td_result"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Solve" onclick="solveEquation()">
+                    </td>
+                </tr>
+            </table>
+        </form>        
+    </body>
+</html>

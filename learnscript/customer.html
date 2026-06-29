@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            function displayCustomerInfo()
+            {
+                //alert("Name ="+myform.name.value)
+                //alert("Name ="+document.getElementById("name").value)
+                var name = document.getElementById("name").value;
+                var customerType = document.getElementById("customerType").value;
+                var divInfor=document.getElementById("customerInfo");    
+                switch(customerType)
+                {
+                    case "vip":
+                        divInfor.innerHTML="Khách hàng VIP: "+name;
+                        divInfor.style.backgroundColor="blue";
+                        break;
+                    case "normal":
+                        divInfor.innerHTML="Khách hàng bình thường: "+name;
+                        divInfor.style.backgroundColor="yellow";
+                        break;
+                    case "potential":
+                        divInfor.innerHTML="Khách hàng tiềm năng: "+name;
+                        divInfor.style.backgroundColor="orange";
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <label for="name">Tên:</label>
+            <input type="text" id="name" name="name"><br><br>
+            Customer Type:
+            <select name="customerType" id="customerType">
+                <option value="vip">VIP</option>
+                <option value="normal">Normal</option>
+                <option value="potential">Potential</option>
+            </select><br><br>
+            <input type="button" value="OK" onclick="displayCustomerInfo()">
+        </form>
+        <div id="customerInfo">
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+    </head>
+    <body>
+        <div style="width: 500px; margin: 0 auto; padding: 20px; border: 1px solid #ccc;">        
+            <form
+                action="process_login.html"
+                method="get"
+                name="loginForm">
+                <table border="0" width="400" cellspacing="0" cellpadding="10" align="center">
+                    <tr>
+                        <td rowspan="7">
+                            <img src="images/ic_admin.png" 
+                                alt="Admin Image" 
+                                width="150" height="250">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-size: 24px; font-weight: bold;">
+                            Login System
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="username">
+                                User Name:
+                            </label>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="username" id="username" value="obama" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" name="password" value="123456" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="remember" value="remember">
+                            Remember me
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Login" 
+                                style="background-image: url(images/ic_login.png);">
+                            |
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

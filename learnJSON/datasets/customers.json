@@ -1,0 +1,37 @@
+[
+    {
+        "customer_type":"VIP",
+        "customers":[
+            {"Id":"c1",
+            "Name":"teo",
+            "Age":30,
+            "Email":"teo@gmail.com"  
+            },
+            {"Id":"c2",
+            "Name":"ty",
+            "Age":29,
+            "Email":"ty@gmail.com"  
+            }
+        ]
+    },
+    {
+        "customer_type":"normal",
+        "customers":[
+            {"Id":"c3",
+            "Name":"bin",
+            "Age":35,
+            "Email":"bin@gmail.com"  
+            },
+            {"Id":"c4",
+            "Name":"bo",
+            "Age":32,
+            "Email":"bo@gmail.com"  
+            },
+            {"Id":"c5",
+            "Name":"tom",
+            "Age":27,
+            "Email":"tom@gmail.com"  
+            }
+        ]
+    }
+]

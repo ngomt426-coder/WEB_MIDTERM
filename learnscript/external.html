@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script src="external.js"></script>
+        <script>
+            function showMessage() {
+                alert("Hello world");
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <h3> Select language</h3>
+            <input type="radio" name="language" value="Vi" id="vi" checked onclick="showVietnamese()">
+            <label for="vi">Vietnamese</label><br>
+            <input type="radio" name="language" value="Korea" id="korea" onclick="showKorean()">
+            <label for="korea">Korean</label><br>  
+            <input type="radio" name="language" value="Chinese" id="chinese" onclick="showChinese()">
+            <label for="chinese">Chinese</label><br>
+            <div id="div_vi" style="display: block;">
+                <h4> Xin chào </h4>
+            </div>
+            <div id="div_korea" style="display: none;">
+                <h4> 안녕하세요 </h4>
+            </div>
+            <div id="div_chinese" style="display: none;">
+                <h4> 你好 </h4>
+            </div>
+        </form>    
+    </body>                     
+</html>

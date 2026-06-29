@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.login-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333333;
+}
+
+.login-header img {
+    display: block;
+    margin: 0 auto 16px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.login-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.login-table td {
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.login-table label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555555;
+    font-weight: 600;
+}
+
+.login-table input[type="text"],
+.login-table input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.login-table input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.form-actions {
+    text-align: center;
+    padding-top: 16px;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    margin-right: 10px;
+}
+
+input[type="reset"] {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+}

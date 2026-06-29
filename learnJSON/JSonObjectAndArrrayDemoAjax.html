@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>        
+        <script src="js/mainjs.js"></script>
+    </head>
+     <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="customer_body">
+
+            </tbody>
+        </table>
+        <script>
+            var customer_body=document.getElementById("customer_body")
+            var dataset_path="datasets/customers.json"
+            load_customer_fromJson(dataset_path,customer_body)
+        </script>       
+    </body>
+</html>

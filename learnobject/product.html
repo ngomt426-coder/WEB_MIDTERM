@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script>
+            var products=[
+                {id:1,name:"P01",price:4000000},
+                {id:2, name:"P02", price:355555},
+                {id:3, name:"P03", price:500000},
+                {id:4, name:"P04", price:1000000}
+            ]
+        </script>
+    </head>
+    <body>
+        <table id="mytable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="mytbody">
+            </tbody>
+        </table>
+
+        <div id="product-detail" style="margin-top:20px;">
+            <h3>Chi tiết sản phẩm</h3>
+            <form onsubmit="return false;">
+                <table>
+                    <tr>
+                        <td><label for="detailId">ID:</label></td>
+                        <td><input type="text" id="detailId" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for="detailName">Name:</label></td>
+                        <td><input type="text" id="detailName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="detailPrice">Price:</label></td>
+                        <td><input type="text" id="detailPrice"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-top:10px;">
+                            <button type="button" onclick="addNewProduct()">Add New Product</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script>
+            load_product_data(products,document.getElementById("mytbody"));
+        </script>
+    </body>
+</html>

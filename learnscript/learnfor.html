@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        
+    </head>
+    <body>
+        <p id="myparagraph">TEST 0</p>
+        <h3 id="mylist"></h3>
+        <script type="text/javascript">
+            var mylist=document.getElementById("mylist");
+            for(var i=1;i<=100;i++)
+            {
+                mylist.innerHTML+=i+"<br/>";
+            }
+            var myparagraph=document.getElementById("myparagraph");
+            myparagraph.innerText="TEST - Danh sách từ 1 đến 100 đã hiển thị thành công";
+        </script>
+    </body>
+</html>

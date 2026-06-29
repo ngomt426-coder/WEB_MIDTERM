@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <link rel="stylesheet" href="css/maincss.css">
+        <script>
+            function processSaveProduct()
+            {
+                productId=document.getElementById("productId").value;
+                productName=document.getElementById("productName").value;
+                //get productbody
+                productbody=document.getElementById("productbody")
+                //create tr element:
+                tr=document.createElement("tr")
+                //create 2 td(s)
+                td_id=document.createElement("td")
+                td_name=document.createElement("td")
+                //assign value for td(s):
+                td_id.innerHTML=productId
+                td_name.innerHTML=productName
+                //append td(s) into tr:
+                tr.appendChild(td_id)
+                tr.appendChild(td_name)
+                //append tr into productbody
+                productbody.appendChild(tr)
+            }
+        </script>
+        <script src="js/dataset.js"></script>
+        <script src="js/mainjs.js"></script>
+    </head>
+    <body>
+        <form name="myform">
+            <table>
+                <tr>
+                    <td>Product ID:</td>
+                    <td>
+                        <input type="text" name="productId" id="productId"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product Name:</td>
+                    <td>
+                        <input type="text" name="productName" id="productName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="button" onclick="processSaveProduct()">Save Product</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>#Action</th>
+                </tr>
+            </thead>
+            <tbody id="productbody">
+
+            </tbody>
+        </table>
+        <script>
+            productbody=document.getElementById("productbody")
+            load_products(products,productbody)
+        </script>
+    </body>
+</html>

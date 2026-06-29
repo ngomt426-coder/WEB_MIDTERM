@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>GPA Calculator</title>
+        <script>
+            function calculateGPA() {
+                var course = myform.course.value;
+                var process = myform.process.value == "" ? 0 : eval(myform.process.value);
+                var midterm = myform.midterm.value == "" ? 0 : eval(myform.midterm.value);
+                var finalExam = myform.finalExam.value == "" ? 0 : eval(myform.finalExam.value);
+                var other = myform.other.value == "" ? 0 : eval(myform.other.value);
+                var result = 0;
+                var weightProcess = 0;
+                var weightMidterm = 0;
+                var weightFinal = 0;
+
+                if (course == "course1") {
+                    weightProcess = 20/100;
+                    weightMidterm = 30/100;
+                    weightFinal = 50/100;
+                } else if (course == "course2") {
+                    weightProcess = 15/100;
+                    weightMidterm = 20/100;
+                    weightFinal = 50/100;
+                    weightOther = 15/100;
+                } else {
+                    weightProcess = 25/100;
+                    weightMidterm = 25/100;
+                    weightFinal = 50/100;
+                }
+                if (course == "course2") {
+                    result = process * weightProcess + midterm * weightMidterm + finalExam * weightFinal + other * weightOther;
+                } else {
+                    result = process * weightProcess + midterm * weightMidterm + finalExam * weightFinal;
+                }
+                result = Math.round(result);
+                myform.result.value = result;
+                if (course == "course2") {
+                    td_result.innerHTML = "<font color='red'>Overall = " + result + "<br>" +
+                        "Weights: process " + weightProcess + "%, midterm " + weightMidterm + "% , final " + weightFinal + "%, other " + weightOther + "%</font>";
+                } else {
+                    td_result.innerHTML = "<font color='red'>Overall = " + result + "<br>" +
+                        "Weights: process " + weightProcess + "%, midterm " + weightMidterm + "% , final " + weightFinal + "%</font>";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id="myform" name="myform">
+            <h1>GPA Calculator</h1>
+            <table>
+                <tr>
+                    <td>Course:</td>
+                    <td>
+                        <select id="course" name="course">
+                            <option value="course1">Course 1</option>
+                            <option value="course2">Course 2</option>
+                            <option value="course3">Course 3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Process score:</td>
+                    <td><input type="text" id="process" name="process"></td>
+                </tr>
+                <tr>
+                    <td>Midterm score:</td>
+                    <td><input type="text" id="midterm" name="midterm"></td>
+                </tr>
+                <tr>
+                    <td>Final score:</td>
+                    <td><input type="text" id="finalExam" name="finalExam"></td>
+                </tr>
+                <tr>
+                    <td>Other score (if any):</td>
+                    <td><input type="text" id="other" name="other"></td>
+                </tr>
+                <tr>
+                    <td>Overall percentage:</td>
+                    <td><input type="text" id="result" name="result" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" onclick="calculateGPA()">Calculate GPA</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="td_result"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

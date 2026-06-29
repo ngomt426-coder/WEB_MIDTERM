@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script type="text/javascript">
+            function loadCustomer()
+            {
+                //get tbody id:
+                var mytablebody=document.getElementById("mytablebody");
+                //create 10 rows:
+                for(var i=1;i<=10;i++)
+                {
+                    id="c"+i
+                    name="Customer "+i;
+                    //create a row:
+                    new_row="<tr onmouseover='this.style.backgroundColor=\"purple\";this.style.color=\"white\";' onmouseout='this.style.backgroundColor=\"#ffffff\";this.style.color=\"black\";'><td>"+id+"</td><td>"+name+"</td></tr>";
+                    //add row to tbody:
+                    mytablebody.innerHTML+=new_row;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table id="mytable" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="mytablebody">
+
+            </tbody>
+        </table>
+        <script type="text/javascript">
+            loadCustomer();
+        </script>
+    </body>
+</html>

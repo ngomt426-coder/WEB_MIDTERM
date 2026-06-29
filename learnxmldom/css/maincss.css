@@ -1,0 +1,9 @@
+table,tr,th,td{
+    border: 1px;
+    border-style: solid;
+}
+tbody tr:hover
+{
+    background-color: yellow;
+    font-style: italic;
+}

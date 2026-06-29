@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        // Data nằm sẵn trong đây thì dùng DOM, nếu tách file riêng thì AJAX
+        customers=[
+            {
+                "customer_type": "VIP",
+                "customers" : 
+                [
+                    {"Id" : "c1",
+                    "Name" : "teo",
+                    "Age" : 30,
+                    "Email" : "teo@gmail.com"
+                    },
+
+                    {"Id" : "c2",
+                    "Name" : "lu",
+                    "Age" : 20,
+                    "Email" : "lu@gmail.com"
+                    },
+                ]
+            },
+            {
+                "customer_type": "Normal",
+                "customers" : 
+                [
+                    {"Id" : "c3",
+                    "Name" : "an",
+                    "Age" : 10,
+                    "Email" : "an@gmail.com"
+                    },
+
+                    {"Id" : "c4",
+                    "Name" : "tao",
+                    "Age" : 40,
+                    "Email" : "tao@gmail.com"
+                    },
+
+                    {"Id" : "c5",
+                    "Name" : "nam",
+                    "Age" : 50,
+                    "Email" : "nam@gmail.com"
+                    },
+                ]
+            },
+        ]
+    </script>
+</head>
+<body onload="load_customers()">
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Age </th>
+                <th> Email </th>
+            </tr>
+        </thead>
+
+        <tbody id="customer_body">
+
+        </tbody>
+    </table>
+
+    <script>
+        function load_customers()
+        {
+            customer_body=document.getElementById("customer_body")
+            for(i=0; i<customers.length;i++) // type of cus (outer loop)
+            {
+                type_customer=customers[i] // type at position i
+                tr_type=document.createElement("tr")
+                td_type=document.createElement("td")
+                td_type.setAttribute("colspan",4)
+                td_type.innerHTML=type_customer.customer_type
+                tr_type.appendChild(td_type)
+                customer_body.appendChild(tr_type)
+
+                for(j=0; j<type_customer.customers.length;j++)
+                {
+                    customer=type_customer.customers[j]
+
+                    tr=document.createElement("tr")
+                    td_id=document.createElement("td")
+                    td_name=document.createElement("td")
+                    td_age=document.createElement("td")
+                    td_email=document.createElement("td")
+
+                    td_id.innerHTML=customer["Id"]
+                    td_name.innerHTML=customer["Name"]
+                    td_age.innerHTML=customer["Age"]
+                    td_email.innerHTML=customer["Email"]
+
+                    tr.appendChild(td_id)
+                    tr.appendChild(td_name)
+                    tr.appendChild(td_age)
+                    tr.appendChild(td_email)
+                    customer_body.appendChild(tr)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

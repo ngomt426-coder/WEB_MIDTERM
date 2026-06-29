@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            function getinfor()
+            {
+                var url=myform.url.value;
+                var protocol=url.split("://")[0];
+                var host=url.split("://")[1].split("/")[0].split(":")[0];
+                var port=url.split("://")[1].split("/")[0].split(":")[1] || "80";
+                var id=url.split("v=")[1].split("&")[0];
+                var name=url.split("watch?v=")[1].split("&")[0];
+                myform.protocol.value=protocol;
+                myform.host.value=host;
+                myform.port.value=port;
+                myform.id.value=id;
+                myform.name.value=name;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <h3>URL Information Parser:</h3>
+            <input type="text" name="url" id="url"
+            value="https://www.youtube.com/watch?v=QH2-TGUlwu4">
+            <button type="button" onclick=getinfor()> Get Information </button>
+            <p>Protocol: <span id="protocol">
+                <input type="text" name="protocol" id="protocol" readonly>
+            </span></p>
+            <p>Host: <span id="host">
+                <input type="text" name="host" id="host" readonly>
+            </span></p>
+            <p>Port: <span id="port">
+                <input type="text" name="port" id="port" readonly>
+            </span></p>
+            <p>Id: <span id="id">
+                <input type="text" name="id" id="id" readonly>
+            </span></p>
+            <p>Name: <span id="name">
+                <input type="text" name="name" id="name" readonly>
+            </span></p>
+        </form>
+    </body>
+</html>
