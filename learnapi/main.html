@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        var customer=
+        {
+            "CustomerID" : "C1",
+            "FirstName" : "Tom",
+             "LastName" : "Holland",
+             "Email" : "tom@gmail.com",
+             "Telephone" : "0123456789"
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td> Customer ID </td>
+            <td id="td_customerID"></td>
+        </tr>
+
+        <tr>
+            <td> First Name </td>
+            <td id="td_firstname"></td>
+        </tr>
+
+        <tr>
+            <td> Last Name </td>
+            <td id="td_lastname"></td>
+        </tr>
+
+        <tr>
+            <td> Email </td>
+            <td id="td_email"></td>
+        </tr>
+
+        <tr>
+            <td> Phone </td>
+            <td id="td_phone"></td>
+        </tr>
+    </table>
+
+    <script>
+        td_customerID=document.getElementById("td_customerID")
+        td_firstname=document.getElementById("td_firstname")
+        td_lastname=document.getElementById("td_lastname")
+        td_email=document.getElementById("td_email")
+        td_phone=document.getElementById("td_phone")
+
+        td_customerID.innerHTML=customer.CustomerID
+        td_firstname.innerHTML=customer("FirstName")
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+    </head>
+    <body>
+        <div style="font-size: 24px; font-weight: bold;" 
+        id="my_digital_timer"></div>
+
+        <script>
+            function make_my_digital_timer()
+            {
+                var my_digital_timer=document.getElementById("my_digital_timer");
+                var mydate=new Date();
+                var hours=mydate.getHours();
+                var minutes=mydate.getMinutes();
+                var seconds=mydate.getSeconds();
+                if(hours<10) hours="0"+hours;
+                if(minutes<10) minutes="0"+minutes;
+                if(seconds<10) seconds="0"+seconds;
+                my_digital_timer.innerText=hours+":"+minutes+":"+seconds;
+            }
+            setInterval(make_my_digital_timer,1000);
+        </script>
+    </body>
+</html>
